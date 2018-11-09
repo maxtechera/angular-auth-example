@@ -1,0 +1,82 @@
+<!--
+  <form>
+    <div>
+      <h2>Login</h2>
+      <div *ngIf="invalidLogin">Invalid username or password.</div>
+      <br />
+
+      <mat-form-field>
+        <input
+          matInput
+          type="email"
+          id="username"
+          name="username"
+          ngModel
+          placeholder="Username"
+          required
+          autofocus
+        />
+      </mat-form-field>
+
+      <br />
+
+      <mat-form-field>
+        <input
+          matInput
+          type="password"
+          id="password"
+          name="password"
+          ngModel
+          placeholder="Password"
+          required
+        />
+      </mat-form-field>
+      <br />
+      <button type="submit">Sign in</button>
+    </div>
+  </form>
+-->
+
+<mat-card class="example-card">
+  <form class="example-form" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+    <mat-card-header> <mat-card-title>Login</mat-card-title> </mat-card-header>
+    <mat-card-content>
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input
+                matInput
+                placeholder="Username"
+                [(ngModel)]="username"
+                name="username"
+                required
+              />
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input
+                matInput
+                placeholder="Password"
+                [(ngModel)]="password"
+                type="password"
+                name="password"
+                required
+              />
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+
+      <mat-spinner
+        [style.display]="showSpinner ? 'block' : 'none'"
+      ></mat-spinner>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button type="submit" color="primary">Login</button>
+    </mat-card-actions>
+  </form>
+</mat-card>

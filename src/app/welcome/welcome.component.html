@@ -1,0 +1,6 @@
+<div *ngIf="!isUserAuthenticated()" style="color:red;">
+  <h2>You are not logged in!</h2>
+</div>
+<div *ngIf="isUserAuthenticated()" style="color:blue;">
+  <h2>You are logged in!</h2>
+</div>
