@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'auth-example'`, () => {
+  it(`should have as title 'angular-auth-example-new'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('auth-example');
+    expect(app.title).toEqual('angular-auth-example-new');
   });
 
-  it('should render title in a h1 tag', () => {
+  it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to auth-example!');
+    expect(compiled.querySelector('.content span').textContent).toContain('angular-auth-example-new app is running!');
   });
 });
